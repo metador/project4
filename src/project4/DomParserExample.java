@@ -1,7 +1,5 @@
 package project4;
 
-
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -157,12 +155,12 @@ public class DomParserExample {
 	}
 
 	
-	/*public static void main(String[] args){
+	public static void main(String[] args){
 		//create an instance
 		DomParserExample dpe = new DomParserExample();
 		
 		//call run example
 		dpe.runExample();
 	}
-*/
+
 }
