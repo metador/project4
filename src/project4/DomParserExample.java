@@ -78,7 +78,7 @@ public class DomParserExample {
 				Element el = (Element)nl.item(i);
 				
 				//get the Employee object
-				Employee e = getEmployee(el);
+				DBLP e = getEmployee(el);
 				
 				//add it to list
 				myEmpls.add(e);
@@ -93,7 +93,7 @@ public class DomParserExample {
 	 * @param empEl
 	 * @return
 	 */
-	private Employee getEmployee(Element empEl) {
+	private DBLP getEmployee(Element empEl) {
 		
 		//for each <employee> element get text or int values of 
 		//name ,id, age and name
@@ -104,7 +104,7 @@ public class DomParserExample {
 		String type = empEl.getAttribute("type");
 		
 		//Create a new Employee with the value read from the xml nodes
-		Employee e = new Employee(name,id,age,type);
+		DBLP e = new DBLP(name,id,age,type);
 		
 		return e;
 	}
