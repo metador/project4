@@ -102,6 +102,24 @@ public class DomParserExample {
 		String type = empEl.getAttribute("type");
 		
 		//Create a new Employee with the value read from the xml nodes
+		/*  ++++parameters map for initialsation
+		 * String title,
+		  int start_page,
+		  int end_page,
+		  int year,
+		  int volume,
+		  int number,
+		  String url ,
+		  String ee ,
+		  String cdrom ,
+		  String cite ,
+		  String crossref ,
+		  String isbn ,
+		  String series ,
+		  String editor ,
+		  ArrayList<String> authors,
+		  String booktitle ,
+		  String genre */
 		DBLP e = new DBLP(name,id,age,type);
 		
 		return e;
