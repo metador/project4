@@ -50,7 +50,7 @@ public class DomParserExample {
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			
 			//parse using builder to get DOM representation of the XML file
-			dom = db.parse("employees.xml");
+			dom = db.parse("final-data.xml");
 			
 
 		}catch(ParserConfigurationException pce) {
@@ -68,7 +68,7 @@ public class DomParserExample {
 		Element docEle = dom.getDocumentElement();
 		
 		//get a nodelist of <employee> elements
-		NodeList nl = docEle.getElementsByTagName("Employee");
+		NodeList nl = docEle.getElementsByTagName("book");
 		if(nl != null && nl.getLength() > 0) {
 			for(int i = 0 ; i < nl.getLength();i++) {
 				
@@ -76,7 +76,7 @@ public class DomParserExample {
 				Element el = (Element)nl.item(i);
 				
 				//get the Employee object
-				DBLP e = getEmployee(el);
+				DBLP e = getDetails(el);
 				
 				//add it to list
 				myEmpls.add(e);
@@ -91,15 +91,46 @@ public class DomParserExample {
 	 * @param empEl
 	 * @return
 	 */
-	private DBLP getEmployee(Element empEl) {
+	private DBLP getDetails(Element empEl) {
 		
 		//for each <employee> element get text or int values of 
 		//name ,id, age and name
-		String name = getTextValue(empEl,"Name");
-		int id = getIntValue(empEl,"Id");
-		int age = getIntValue(empEl,"Age");
+		 String title="";
 
-		String type = empEl.getAttribute("type");
+		Integer start_page=0;
+		
+		Integer end_page=0;
+		Integer year;
+		Integer volume;
+		Integer number;
+		 String url="";
+		 String ee="";
+		 String cdrom="";
+		 String cite="";
+		 String crossref="";
+		 String isbn="";
+		 String series="";
+		 String editor="";
+		 ArrayList<String> authors=new ArrayList<String>();
+		 String booktitle="";
+		 String genre="";
+		  String publisher="";
+	     title = getTextValue(empEl,"title");
+		year = getIntValue(empEl,"year");
+		volume = getIntValue(empEl,"volume");
+		number = getIntValue(empEl,"number");
+		url = getTextValue(empEl,"url");
+		ee = getTextValue(empEl,"ee");
+		cdrom = getTextValue(empEl,"cdrom");
+		cite = getTextValue(empEl,"cite");
+		crossref = getTextValue(empEl,"crossref");
+		isbn = getTextValue(empEl,"isbn");
+		series = getTextValue(empEl,"series");
+		editor = getTextValue(empEl,"editor");
+		booktitle = getTextValue(empEl,"booktitle");
+		genre="book";
+		publisher=getTextValue(empEl,"publisher");;
+		//String type = empEl.getAttribute("type");
 		
 		//Create a new Employee with the value read from the xml nodes
 		/*  ++++parameters map for initialsation
@@ -120,7 +151,7 @@ public class DomParserExample {
 		  ArrayList<String> authors,
 		  String booktitle ,
 		  String genre */
-		DBLP e = new DBLP(name,id,age,type);
+		DBLP e = new DBLP(title,start_page,end_page,year,volume,number,url,ee,cdrom,cite,crossref,isbn,series,editor, booktitle,genre,publisher);
 		
 		return e;
 	}
@@ -153,9 +184,12 @@ public class DomParserExample {
 	 * @param tagName
 	 * @return
 	 */
-	private int getIntValue(Element ele, String tagName) {
+	private Integer getIntValue(Element ele, String tagName) {
 		//in production application you would catch the exception
-		return Integer.parseInt(getTextValue(ele,tagName));
+	if(getTextValue(ele,tagName)!=null)
+		return Integer.parseInt(getTextValue(ele,tagName).replaceAll("[^0-9]",""));
+	else
+	return null;
 	}
 	
 	/**
@@ -164,7 +198,7 @@ public class DomParserExample {
 	 */
 	private void printData(){
 		
-		System.out.println("No of Employees '" + myEmpls.size() + "'.");
+		System.out.println("No of books '" + myEmpls.size() + "'.");
 		
 		Iterator it = myEmpls.iterator();
 		while(it.hasNext()) {

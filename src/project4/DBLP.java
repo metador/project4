@@ -9,12 +9,12 @@ public class DBLP {
 
 	private String title;
 
-	private int start_page;
+	private Integer start_page;
 	
-	private int end_page;
-	private int year;
-	private int volume;
-	private int number;
+	private Integer end_page;
+	private Integer year;
+	private Integer volume;
+	private Integer number;
 	private String url="";
 	private String ee="";
 	private String cdrom="";
@@ -33,11 +33,11 @@ public class DBLP {
 	
 public DBLP(
 		  String title,
-		  int start_page,
-		  int end_page,
-		  int year,
-		  int volume,
-		  int number,
+		  Integer start_page,
+		  Integer end_page,
+		  Integer year,
+		  Integer volume,
+		  Integer number,
 		  String url ,
 		  String ee ,
 		  String cdrom ,
@@ -46,9 +46,10 @@ public DBLP(
 		  String isbn ,
 		  String series ,
 		  String editor ,
-		  ArrayList<String> authors,
+		//  ArrayList<String> authors,
 		  String booktitle ,
-		  String genre 
+		  String genre,
+		  String publisher
 		){
 	  this. title=title;
 	  this. start_page=start_page;
@@ -67,7 +68,7 @@ public DBLP(
 	  this.authors=authors;
 	  this. booktitle =booktitle;
 	  this. genre =genre;
-		
+	  this. publisher =publisher;
 	}
 	
 	public String getTitle() {
@@ -77,45 +78,45 @@ public DBLP(
 	public void setTitle(String title) {
 	this.title = title;
 	}
-	public int getStart_page() {
+	public Integer getStart_page() {
 		return start_page ;
 	}
 
-	public void setStart_page(int start_page) {
+	public void setStart_page(Integer start_page) {
 		this.start_page = start_page;
 	}
 
-	public int getEnd_page() {
+	public Integer getEnd_page() {
 		return end_page;
 	}
 
-	public void setEnd_page(int end_page) {
+	public void setEnd_page(Integer end_page) {
 		this.end_page = end_page;
 	}
 
 	
 
 
-	public int getYear() {
+	public Integer getYear() {
 		return year;
 	}
 
-	public void setYear(int year) {
+	public void setYear(Integer year) {
 		this.year = year;
 	}	
-	public int getVoulume() {
+	public Integer getVolume() {
 		return volume;
 	}
 
-	public void setVoulme(int volume) {
+	public void setVolume(Integer volume) {
 		this.volume = year;
 	}
 	
-	public int getNumber() {
+	public Integer getNumber() {
 		return number;
 	}
 
-	public void setNumber(int number) {
+	public void setNumber(Integer number) {
 		this.number = number;
 	}
 	
@@ -221,12 +222,15 @@ public DBLP(
 		sb.append("Employee Details - ");
 		sb.append("title:" + getTitle());
 		sb.append(", ");
-		sb.append("Type:"  );
-		sb.append(", ");
 		sb.append("end_page:" + getEnd_page());
 		sb.append(", ");
 		sb.append("start_page:" + getStart_page());
-		sb.append(".");
+		sb.append(",");
+		sb.append("Year" + getYear());
+		sb.append(", ");
+		sb.append(",");
+		sb.append("Voulme" + getVolume()+"Number"+getNumber() +" "+getBooktitle()+" "+getCdrom()+" "+getIsbn());
+
 		
 		return sb.toString();
 	}
