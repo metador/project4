@@ -26,7 +26,6 @@ public class DBLP {
 	private ArrayList<String> authors=new ArrayList<String>();
 	private String booktitle="";
 	private String genre="";
-	  String publisher="";
 	private String publisher="";
 	
 	public DBLP(){
@@ -73,22 +72,13 @@ public DBLP(
 	  this. publisher =publisher;
 	}
 	
-	public String getTitle() {
-	return title;
-	}
-
-	public void setTitle(String title) {
-	this.title = title;
-	}
-	public Integer getStart_page() {
-		return start_page ;
-	
-	public int getStart_page() {
-		return start_page;
-	}
 
 	public void setStart_page(Integer start_page) {
 		this.start_page = start_page;
+	}
+	
+	public int getStart_page() {
+		return start_page;
 	}
 
 	public Integer getEnd_page() {
@@ -115,9 +105,6 @@ public DBLP(
 	public void setYear(Integer year) {
 		this.year = year;
 	}	
-	public Integer getVolume() {
-		return volume;
-	}
 
 	public void setVolume(Integer volume) {
 		this.volume = year;
@@ -128,24 +115,11 @@ public DBLP(
 	}
 
 	public void setNumber(Integer number) {
-	public void setType(int year) {
-		this.year = year;
+		this.number = number;
 	}	
 	
-	
-	public String toString() {
-		StringBuffer sb = new StringBuffer();
-		sb.append("Employee Details - ");
-		sb.append("title:" + getTitle());
-		sb.append(", ");
-		sb.append("Type:"  );
-		sb.append(", ");
-		sb.append("end_page:" + getEnd_page());
-		sb.append(", ");
-		sb.append("start_page:" + getStart_page());
-		sb.append(".");
-		
-		return sb.toString();
+	public void setType(int year) {
+		this.year = year;
 	}
 
 
@@ -159,17 +133,11 @@ public DBLP(
 	}
 
 
-	public int getNumber() {
-		return number;
-	}
-
-
 	public void setNumber(int number) {
 		this.number = number;
 	}
+
 	
-
-
 	public String getUrl() {
 		return url;
 	}
@@ -184,9 +152,6 @@ public DBLP(
 		return ee;
 	}
 
-	public void setEe(String Ee) {
-		this.ee = Ee;
-
 	public void setEe(String ee) {
 		this.ee = ee;
 	}
@@ -196,9 +161,6 @@ public DBLP(
 	public String getCdrom() {
 		return cdrom;
 	}
-
-	public void setCdrom(String Cdrom) {
-		this.cdrom = Cdrom;
 
 	public void setCdrom(String cdrom) {
 		this.cdrom = cdrom;
@@ -210,9 +172,6 @@ public DBLP(
 		return cite;
 	}
 
-	public void setCite(String Cite) {
-		this.cite = Cite;
-
 	public void setCite(String cite) {
 		this.cite = cite;
 	}
@@ -222,9 +181,6 @@ public DBLP(
 	public String getCrossref() {
 		return crossref;
 	}
-
-	public void setCrossref(String Crossref) {
-		this.crossref = Crossref;
 
 	public void setCrossref(String crossref) {
 		this.crossref = crossref;
@@ -236,9 +192,6 @@ public DBLP(
 		return isbn;
 	}
 
-	public void setIsbn(String Isbn) {
-		this.isbn = Isbn;
-
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
@@ -248,9 +201,6 @@ public DBLP(
 	public String getSeries() {
 		return series;
 	}
-
-	public void setSeries(String Series) {
-		this.series = Series;
 
 	public void setSeries(String series) {
 		this.series = series;
@@ -281,9 +231,6 @@ public DBLP(
 		return booktitle;
 	}
 
-	public void setBooktitle(String Booktitle) {
-		this.booktitle = Booktitle;
-
 	public void setBooktitle(String booktitle) {
 		this.booktitle = booktitle;
 	}
@@ -298,24 +245,18 @@ public DBLP(
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	
-
 
 	public String getPublisher() {
 		return publisher;
 	}
-
-	public void setPublisher(String Publisher) {
-		this.publisher = Publisher;
-	}
 	 
-	
-	public ArrayList<String> getAuthor() {
-		return authors;
-	}
 
 	public void setPublisher(ArrayList<String>  authors) {
 		this.authors = authors;
+	}
+	
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
 	}
 	 	
 	public String toString() {
@@ -334,7 +275,5 @@ public DBLP(
 
 		
 		return sb.toString();
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
 	}
 }
