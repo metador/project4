@@ -27,6 +27,7 @@ public class DBLP {
 	private String booktitle="";
 	private String genre="";
 	private String publisher="";
+	
 	public DBLP(){
 		
 	}
@@ -79,5 +80,145 @@ public class DBLP {
 		sb.append(".");
 		
 		return sb.toString();
+	}
+
+
+	public int getVolume() {
+		return volume;
+	}
+
+
+	public void setVolume(int volume) {
+		this.volume = volume;
+	}
+
+
+	public int getNumber() {
+		return number;
+	}
+
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+
+	public String getUrl() {
+		return url;
+	}
+
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+
+	public String getEe() {
+		return ee;
+	}
+
+
+	public void setEe(String ee) {
+		this.ee = ee;
+	}
+
+
+	public String getCdrom() {
+		return cdrom;
+	}
+
+
+	public void setCdrom(String cdrom) {
+		this.cdrom = cdrom;
+	}
+
+
+	public String getCite() {
+		return cite;
+	}
+
+
+	public void setCite(String cite) {
+		this.cite = cite;
+	}
+
+
+	public String getCrossref() {
+		return crossref;
+	}
+
+
+	public void setCrossref(String crossref) {
+		this.crossref = crossref;
+	}
+
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+
+	public String getSeries() {
+		return series;
+	}
+
+
+	public void setSeries(String series) {
+		this.series = series;
+	}
+
+
+	public String getEditor() {
+		return editor;
+	}
+
+
+	public void setEditor(String editor) {
+		this.editor = editor;
+	}
+
+
+	public ArrayList<String> getAuthors() {
+		return authors;
+	}
+
+
+	public void setAuthors(ArrayList<String> authors) {
+		this.authors = authors;
+	}
+
+
+	public String getBooktitle() {
+		return booktitle;
+	}
+
+
+	public void setBooktitle(String booktitle) {
+		this.booktitle = booktitle;
+	}
+
+
+	public String getGenre() {
+		return genre;
+	}
+
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
+
+	public String getPublisher() {
+		return publisher;
+	}
+
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
 	}
 }
